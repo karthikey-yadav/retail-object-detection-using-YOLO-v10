@@ -1,6 +1,6 @@
 # Retail-object-detection-using-YOLO-v10
 
-# Retail Object Detection System using YOLO
+
 
 ## Overview
 The **Retail Object Detection System** utilizes **YOLO (You Only Look Once)** to identify and track objects in a retail environment. The system automates checkout by detecting products, generating a unique QR code for each transaction, and providing a web-based interface for customers to view and pay for their purchases online.
