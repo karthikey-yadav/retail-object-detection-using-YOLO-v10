@@ -1,6 +1,3 @@
-Below is a **clean, plain README.md text** that you can **directly copy–paste** into your project.
-No special formatting tricks, no explanations in between.
-
 ---
 
 # AI Self-Checkout System using YOLO
