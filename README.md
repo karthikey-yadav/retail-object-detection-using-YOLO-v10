@@ -1,97 +1,145 @@
-# Retail-object-detection-using-YOLO-v10
+AI Self-Checkout System using YOLO
+Overview
 
+This project implements a simple AI-based self-checkout system using YOLO object detection.
+The system detects products placed in a checkout area using a camera and automatically generates a bill without using barcodes or RFID.
 
+The project is intended as a baseline implementation for academic projects, demos, and research in computer vision–based retail automation.
 
-## Overview
-The **Retail Object Detection System** utilizes **YOLO (You Only Look Once)** to identify and track objects in a retail environment. The system automates checkout by detecting products, generating a unique QR code for each transaction, and providing a web-based interface for customers to view and pay for their purchases online.
+Objectives
 
-## Features
-- **Real-time object detection** using YOLO
-- **Automatic checkout** with itemized billing
-- **QR code generation** for each purchase
-- **Web application** for transaction tracking
-- **Online payment integration**
+Detect products using a YOLO model
 
-## Technologies Used
-- **YOLOv8** for object detection
-- **OpenCV** for image processing
-- **Flask/Django** for web backend
-- **React.js/Next.js** for frontend
-- **MongoDB/PostgreSQL** for database storage
-- **QR Code Generator** (Python library: `qrcode`)
-- **Raspberry Pi Model 4B / AMD Kria KR260** for hardware implementation (optional)
+Identify and count products automatically
 
-## Installation
-### Prerequisites
-Ensure you have the following installed:
-- Python 3.x
-- Node.js (if using React for frontend)
-- CUDA (for GPU acceleration)
-- YOLOv8 (`pip install ultralytics`)
-- OpenCV (`pip install opencv-python`)
-- Flask/Django (`pip install flask` or `pip install django`)
-- Database (MongoDB/PostgreSQL setup)
+Generate a simple bill based on detected items
 
-### Steps to Run the Project
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-repo/retail-yolo.git
-   cd retail-yolo
-   ```
-2. **Set up the virtual environment (optional):**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-3. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. **Run the YOLO detection script:**
-   ```bash
-   python detect.py --source 0  # For webcam input
-   ```
-5. **Start the web application:**
-   ```bash
-   python app.py  # If using Flask
-   ```
-   OR
-   ```bash
-   python manage.py runserver  # If using Django
-   ```
-6. **Access the Web UI:**
-   Open `http://localhost:5000` or `http://127.0.0.1:8000` in your browser.
+Perform detection in real time using a single camera
 
-## Project Structure
-```
-retail-yolo/
-│── backend/
-│   ├── app.py (Flask app) OR manage.py (Django app)
-│   ├── models.py
-│   ├── routes/
-│   └── static/
-│── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   └── index.js
-│── object_detection/
-│   ├── detect.py
-│   ├── yolo_model/
-│   └── datasets/
-│── qr_code/
-│   ├── generate_qr.py
-│── requirements.txt
-│── README.md
-```
+System Architecture
 
-## Future Enhancements
-- Implement **cloud-based YOLO inference** for scalability
-- Add **NFC/RFID integration** for faster checkout
-- Deploy as a **mobile application** for enhanced customer experience
+Camera Input
+↓
+YOLO Object Detection
+↓
+Product Identification
+↓
+Item Counting
+↓
+Bill Generation
 
-## Contributors
-- **Your Name** - [karthikeyan yadav](https://github.com/karthikey-yadav)
+Technologies Used
 
+Python
 
+YOLO (YOLOv8 / YOLOv10)
 
+OpenCV
+
+PyTorch
+
+Ultralytics Framework
+
+Project Structure
+
+self-checkout/
+│
+├── data/
+│ ├── train/
+│ └── val/
+│
+├── weights/
+│ └── yolo_model.pt
+│
+├── main.py
+├── requirements.txt
+└── README.md
+
+Dataset
+
+Custom product images (fruits, packaged goods, etc.)
+
+Annotated in YOLO format
+
+Images captured under real checkout conditions
+
+Split into training and validation sets
+
+Installation
+
+Clone the repository
+git clone https://github.com/your-username/self-checkout-yolo.git
+
+cd self-checkout-yolo
+
+Install dependencies
+pip install -r requirements.txt
+
+How It Works
+
+The camera captures live video of the checkout area
+
+YOLO detects products in each frame
+
+Detected products are mapped to predefined prices
+
+Items entering the checkout area are added to the cart
+
+The total bill is displayed in real time
+
+Output
+
+Bounding boxes around detected products
+
+Product name and quantity
+
+Total bill amount displayed on the screen
+
+Features
+
+Real-time object detection
+
+No barcode or RFID required
+
+Camera-only solution
+
+Simple and lightweight implementation
+
+Easy to extend for research or deployment
+
+Limitations
+
+Detection accuracy depends on lighting conditions
+
+Occlusions can affect counting accuracy
+
+Similar-looking products may be misclassified
+
+Payment gateway is not integrated
+
+Future Improvements
+
+Add object tracking for better counting
+
+Handle occlusions using temporal logic
+
+Integrate QR code or UPI payment system
+
+Deploy on edge devices like Jetson Nano
+
+Improve accuracy with larger datasets
+
+Applications
+
+Retail self-checkout counters
+
+Smart stores
+
+Automated billing systems
+
+Academic and research projects
+
+Conclusion
+
+This project demonstrates a simple and effective AI self-checkout system using YOLO.
+It serves as a strong baseline for further enhancements such as tracking, payment integration, and edge deployment.
