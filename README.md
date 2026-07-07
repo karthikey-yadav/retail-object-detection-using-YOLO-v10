@@ -144,11 +144,3 @@ It serves as a strong **baseline** for further enhancements such as tracking, pa
 
 ---
 
-If you want, I can also:
-
-* Convert this into **paper-style documentation**
-* Make it **YOLOv10-specific**
-* Add a **Results and Metrics section**
-* Rewrite it for **final-year project submission**
-
-Just tell me.
